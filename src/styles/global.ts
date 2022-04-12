@@ -4,6 +4,9 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --yellow: #ffeaa7;
 
+    --text-title: #363f5f;
+    --text-body: #969cb2;
+
     --background: #f0f2f5;
     --shape: #fff;
   }
@@ -12,6 +15,16 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  html {
+    @media (max-width: 1080px) {
+      font-size: 93.75%;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 87.5%;
+    }
   }
 
   body {

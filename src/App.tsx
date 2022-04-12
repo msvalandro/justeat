@@ -1,3 +1,13 @@
+import { Header } from './components/Header';
+import { Restaurants } from './components/Restaurants';
+import { GlobalStyle } from './styles/global';
+
 export function App() {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <Header />
+      <Restaurants />
+      <GlobalStyle />
+    </>
+  );
 }
