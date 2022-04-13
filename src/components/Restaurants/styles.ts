@@ -43,6 +43,14 @@ export const InputBox = styled.div`
 
     font-size: 16px;
     color: var(--text-title);
+
+    @media (max-width: 1080px) {
+      width: 30rem;
+    }
+
+    @media (max-width: 720px) {
+      width: 20rem;
+    }
   }
 
   img {
