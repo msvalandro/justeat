@@ -14,6 +14,11 @@ yarn start
 # using npm
 npm install
 npm start
+
+# run tests
+yarn test
+#or
+npm run test
 ```
 
 ## 💻 Environment

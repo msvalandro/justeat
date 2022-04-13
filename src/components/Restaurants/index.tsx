@@ -52,6 +52,7 @@ export function Restaurants() {
           type="text"
           onChange={handlePostcodeChange}
           onKeyDown={handleKeyDown}
+          data-testid="input"
         />
         <img
           src={searchIcon}
@@ -71,7 +72,7 @@ export function Restaurants() {
       {loading ? (
         <Loading />
       ) : (
-        <ul>
+        <ul data-testid="restaurants-list">
           {restaurants.map(restaurant => (
             <RestaurantItem key={restaurant.Id} restaurant={restaurant} />
           ))}
