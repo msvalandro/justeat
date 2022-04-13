@@ -9,19 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  input {
-    height: 4rem;
-    width: 40rem;
-
-    border: 1px solid var(--text-title);
-    border-radius: 8px;
-
-    margin-top: -2rem;
-    margin-bottom: 4rem;
-
-    padding: 0 1.5rem;
-
-    font-size: 16px;
+  h2 {
     color: var(--text-title);
   }
 
@@ -34,5 +22,38 @@ export const Container = styled.div`
 
     li {
     }
+  }
+`;
+
+export const InputBox = styled.div`
+  position: relative;
+
+  margin-top: -2rem;
+
+  input {
+    height: 4rem;
+    width: 40rem;
+
+    border: 1px solid var(--text-title);
+    border-radius: 8px;
+
+    margin-bottom: 4rem;
+
+    padding: 0 1.5rem;
+
+    font-size: 16px;
+    color: var(--text-title);
+  }
+
+  img {
+    height: 2rem;
+
+    position: absolute;
+    right: 1rem;
+    top: 0;
+
+    transform: translateY(50%);
+
+    cursor: pointer;
   }
 `;
