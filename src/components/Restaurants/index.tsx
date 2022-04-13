@@ -11,9 +11,11 @@ export function Restaurants() {
   const [postcode, setPostcode] = useState('');
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleSearchRestaurants = useCallback(() => {
     setLoading(true);
+    setShowError(false);
 
     api
       .get<{ Restaurants: Restaurant[] }>(`restaurants/bypostcode/${postcode}`)
@@ -22,14 +24,16 @@ export function Restaurants() {
           ({ IsOpenNow }) => IsOpenNow
         );
 
+        setShowError(false);
         setRestaurants(restaurantsData);
-        setLoading(false);
-      });
+      })
+      .catch(() => setShowError(true))
+      .finally(() => setLoading(false));
   }, [postcode]);
 
   const showEmptyMessage = useCallback(() => {
-    return restaurants.length < 1 && !loading;
-  }, [restaurants, loading]);
+    return restaurants.length < 1 && !loading && !showError;
+  }, [restaurants.length, loading, showError]);
 
   const handlePostcodeChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     setPostcode(target.value);
@@ -57,6 +61,12 @@ export function Restaurants() {
       </InputBox>
 
       {showEmptyMessage() && <h2>Please, search by a postcode</h2>}
+
+      {showError && (
+        <h2>
+          An error occurred while trying to get restaurants, please try again.
+        </h2>
+      )}
 
       {loading ? (
         <Loading />
