@@ -8,16 +8,21 @@ This is a web app built with React.js, styled-components and axios.
 
 ```sh
 # using yarn
+
+# install dependencies
 yarn
+# run app
 yarn start
-
-# using npm
-npm install
-npm start
-
 # run tests
 yarn test
-#or
+
+# using npm
+
+# install dependencies
+npm install
+# run app
+npm start
+# run tests
 npm run test
 ```
 
